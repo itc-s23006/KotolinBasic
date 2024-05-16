@@ -1,12 +1,12 @@
 package org.example.chap24
 
 fun main(args: Array<String>) {
-    println("----24.1----")
-    val p = Person1()
-    p.name = "タケシ"
-    p.age = 5
-    p.great()
     run {
+        println("----24.1----")
+        val p = Person1()
+        p.name = "タケシ"
+        p.age = 5
+        p.great()
         val n = p.name
         val a = p.age
         println("変数nの値：　$n")
@@ -27,6 +27,17 @@ fun main(args: Array<String>) {
         p.age = 5
         println(p.message)
         println(p.getGreatMessage())
+    }
+    run {
+        println("----24.5----")
+        val p = Person4()
+        p.name = "タケシ"
+        p.age = 5
+        println(p.message)
+        p.age = 6
+        println(p.message)
+        p.age = 100
+        println(p.message)
     }
 }
 
@@ -62,4 +73,21 @@ class Person4 {
     fun getGreatMessage(): String {
         return "${name}です。${age}歳です。"
     }
+}
+
+class Person7 {
+    var name: String = ""
+    var age: Int = 0
+    val message: String
+        get() = "${name} です。${age}歳です。"
+}
+
+class Person8 {
+    var name: String = ""
+    var age: Int = 0
+    var textAge: String
+    set(value) {
+        age = value.toInt()
+    }
+        get() = age.toString()
 }
