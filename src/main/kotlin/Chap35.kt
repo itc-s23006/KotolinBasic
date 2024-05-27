@@ -22,6 +22,10 @@ fun main(args: Array<String>) {
         }
     }
     run {
+        println("----35.10----")
+        val p = Person("タケシ", 1234)
+        println(p.toString())
+
         println("----broken----")
         val p1 = BrokenPerson("タケシ", 1234)
         val p2 = BrokenPerson("タケシ", 1234)
